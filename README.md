@@ -9,6 +9,7 @@ React + TypeScript
 ## 使用 API
 
 [RESAS API](https://opendata.resas-portal.go.jp/)
+
 [Highcharts](https://www.highcharts.com/)
 
 ## 参考サイト
