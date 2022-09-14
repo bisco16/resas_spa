@@ -1,10 +1,15 @@
+// ※メインtsです
 import React, { useEffect, useState } from "react";
 import CheckField from "./CheckField";
 import Graph from "./Graph";
+// ↑グラフ用のtsを読み込んでいます
 
 import axios from "axios";
 
+let api_url = "https://opendata.resas-portal.go.jp/api/v1";
+// ↑apiのurlの共通部
 let api_key = "527bS5a6c1I0Flo1ism4JhLLzXYIirlsuOxYNwdn";
+// ↑APIキー
 
 const Main: React.FC = () => {
   const [prefectures, setPreFectures] = useState<{
@@ -21,11 +26,13 @@ const Main: React.FC = () => {
   useEffect(() => {
     // 都道府県一覧を取得する
     axios
-      .get("https://opendata.resas-portal.go.jp/api/v1/prefectures", {
+      .get(api_url + "/prefectures", {
         headers: { "X-API-KEY": api_key },
+        // apiキーの入力
       })
       .then((results) => {
         setPreFectures(results.data);
+        // ↑ここでresasから都道府県取得
       })
       .catch((error) => {});
   }, []);
@@ -48,11 +55,14 @@ const Main: React.FC = () => {
 
       axios
         .get(
-          "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=" +
+          api_url +
+            "/population/composition/perYear?prefCode=" +
             String(prefCode),
+          // ↑チェックされた県の人口取得
           {
             headers: {
               "X-API-KEY": api_key,
+              // apiキーの入力
             },
           }
         )
@@ -61,6 +71,7 @@ const Main: React.FC = () => {
             prefName: prefName,
             data: results.data.result.data[0].data,
           });
+          // ↑表示
 
           setPrefPopulation(c_prefPopulation);
         })
@@ -92,6 +103,7 @@ const Main: React.FC = () => {
       <Graph populationdata={prefPopulation} />
     </main>
   );
+  // ↑htmlでの表示部
 };
 
 export default Main;

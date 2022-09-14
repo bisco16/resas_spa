@@ -32,19 +32,22 @@ const Graph: React.FC<Props> = ({ populationdata }) => {
   const options: Highcharts.Options = {
     title: {
       text: "総人口推移",
+      // ↑グラフタイトル
     },
     xAxis: {
       title: {
         text: "年度",
+        // ↑グラフ横
       },
       categories: categories,
     },
     yAxis: {
       title: {
         text: "人口数",
+        // ↑グラフ縦
       },
     },
-    // 都道府県を一つも選んでいない場合との分岐条件
+    // 都道府県を一つも選んでいない場合
     series:
       series.length === 0
         ? [{ type: "line", name: "都道府県名", data: [] }]
@@ -55,6 +58,7 @@ const Graph: React.FC<Props> = ({ populationdata }) => {
     <div className="graph">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
+    // ↑グラフの表示部本体
   );
 };
 
