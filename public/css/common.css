@@ -18,19 +18,3 @@ body {
     background-image: url("../img/hp_bg.webp");
     background-repeat: repeat-y;
 }
-
-td:nth-last-child(even) {
-    padding: 0 10px;
-}
-
-#resas_prefecture_table {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-}
-
-.btn {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-}
