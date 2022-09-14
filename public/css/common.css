@@ -18,3 +18,42 @@ body {
     background-image: url("../img/hp_bg.webp");
     background-repeat: repeat-y;
 }
+
+h1 {
+    text-align: center;
+}
+
+.graph {
+    padding: 10px;
+}
+
+.label {
+    display: contents;
+    padding: 0.5rem 2rem;
+    font-size: 20px;
+    border-left: 4px solid #000;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.checkcardList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: flex-start;
+    justify-self: auto;
+}
+
+.checkcard {
+    border: solid 2px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 4px;
+    margin: 0.5rem;
+}
+
+.text {
+    display: contents;
+    margin-left: 1em;
+    cursor: pointer
+}
