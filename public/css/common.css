@@ -28,11 +28,12 @@ h1 {
 }
 
 .label {
-    display: contents;
+    /* display: contents; */
     padding: 0.5rem 2rem;
     font-size: 20px;
-    border-left: 4px solid #000;
-    margin-left: 1em;
+    /* border-left: 4px solid #000; */
+    /* margin-left: 1em; */
+    text-align: center;
     cursor: pointer;
 }
 
@@ -42,6 +43,12 @@ h1 {
     padding: 10px;
     justify-content: flex-start;
     justify-self: auto;
+}
+
+@media screen and (max-width: 650px) {
+    .checkcardList {
+        padding: 0;
+    }
 }
 
 .checkcard {
