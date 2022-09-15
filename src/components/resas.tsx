@@ -101,6 +101,11 @@ const Main: React.FC = () => {
       )}
       <h2 className="label">人口推移グラフ</h2>
       <Graph populationdata={prefPopulation} />
+      <div className="git_icon">
+      <a href="https://github.com/bisco16/resas_spa">
+            <i className="fa-brands fa-github"></i>
+        </a>
+      </div>
     </div>
   );
   // ↑htmlでの表示部
