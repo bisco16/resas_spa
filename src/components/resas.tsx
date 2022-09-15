@@ -1,6 +1,7 @@
 // ※メインtsです
 import React, { useEffect, useState } from "react";
 import CheckField from "./CheckField";
+//県選択用のtsを読み込んでいます
 import Graph from "./Graph";
 // ↑グラフ用のtsを読み込んでいます
 
@@ -8,7 +9,7 @@ import axios from "axios";
 
 const api_url = "https://opendata.resas-portal.go.jp/api/v1";
 // ↑apiのurlの共通部
-let api_key = "527bS5a6c1I0Flo1ism4JhLLzXYIirlsuOxYNwdn";
+const api_key = "527bS5a6c1I0Flo1ism4JhLLzXYIirlsuOxYNwdn";
 // ↑APIキー
 
 const Main: React.FC = () => {
