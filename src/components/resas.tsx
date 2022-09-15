@@ -6,7 +6,7 @@ import Graph from "./Graph";
 
 import axios from "axios";
 
-let api_url = "https://opendata.resas-portal.go.jp/api/v1";
+const api_url = "https://opendata.resas-portal.go.jp/api/v1";
 // ↑apiのurlの共通部
 let api_key = "527bS5a6c1I0Flo1ism4JhLLzXYIirlsuOxYNwdn";
 // ↑APIキー
@@ -91,7 +91,7 @@ const Main: React.FC = () => {
   };
 
   return (
-    <main>
+    <div>
       <h2 className="label">都道府県</h2>
       {prefectures && (
         <CheckField
@@ -101,7 +101,7 @@ const Main: React.FC = () => {
       )}
       <h2 className="label">人口推移グラフ</h2>
       <Graph populationdata={prefPopulation} />
-    </main>
+    </div>
   );
   // ↑htmlでの表示部
 };
