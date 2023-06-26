@@ -9,7 +9,7 @@ import axios from "axios";
 
 const api_url = "https://opendata.resas-portal.go.jp/api/v1";
 // ↑apiのurlの共通部
-const api_key = "527bS5a6c1I0Flo1ism4JhLLzXYIirlsuOxYNwdn";
+const api_key = process.env.REACT_APP_RESAS_APP_KEY;
 // ↑APIキー
 
 const Main: React.FC = () => {
@@ -28,7 +28,7 @@ const Main: React.FC = () => {
     // 都道府県一覧を取得する
     axios
       .get(api_url + "/prefectures", {
-        headers: { "X-API-KEY": api_key },
+        headers: { "X-API-KEY": String(api_key) },
         // apiキーの入力
       })
       .then((results) => {
@@ -62,7 +62,7 @@ const Main: React.FC = () => {
           // ↑チェックされた県の人口取得
           {
             headers: {
-              "X-API-KEY": api_key,
+              "X-API-KEY": String(api_key),
               // apiキーの入力
             },
           }
